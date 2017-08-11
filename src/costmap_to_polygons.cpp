@@ -114,6 +114,7 @@ CostmapToPolygonsDBSMCCH::CostmapToPolygonsDBSMCCH() : BaseCostmapToPolygons()
 
 CostmapToPolygonsDBSMCCH::~CostmapToPolygonsDBSMCCH() 
 {
+  stopWorker();
   if (dynamic_recfg_ != NULL)
     delete dynamic_recfg_;
 }

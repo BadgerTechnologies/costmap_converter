@@ -209,6 +209,8 @@ public:
      */
     void stopWorker()
     {
+      boost::mutex::scoped_lock terminate_lock(stop_worker_mutex_);
+
       worker_timer_.stop();
       if (spin_thread_)
       {
@@ -218,6 +220,7 @@ public:
         }
         spin_thread_->join();
         delete spin_thread_;
+        spin_thread_ = NULL;
       }
     }
 
@@ -260,6 +263,7 @@ private:
   ros::CallbackQueue callback_queue_;
   boost::mutex terminate_mutex_;
   bool need_to_terminate_;
+  boost::mutex stop_worker_mutex_;
 };    
 
 

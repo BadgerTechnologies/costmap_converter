@@ -54,6 +54,7 @@ CostmapToLinesDBSMCCH::CostmapToLinesDBSMCCH() : CostmapToPolygonsDBSMCCH()
   
 CostmapToLinesDBSMCCH::~CostmapToLinesDBSMCCH() 
 {
+  stopWorker();
   if (dynamic_recfg_ != NULL)
     delete dynamic_recfg_;
 }

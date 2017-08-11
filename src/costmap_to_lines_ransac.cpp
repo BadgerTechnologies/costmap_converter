@@ -53,6 +53,7 @@ CostmapToLinesDBSRANSAC::CostmapToLinesDBSRANSAC() : CostmapToPolygonsDBSMCCH()
 
 CostmapToLinesDBSRANSAC::~CostmapToLinesDBSRANSAC() 
 {
+  stopWorker();
   if (dynamic_recfg_ != NULL)
     delete dynamic_recfg_;
 }
