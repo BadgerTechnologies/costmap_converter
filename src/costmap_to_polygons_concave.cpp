@@ -52,6 +52,7 @@ CostmapToPolygonsDBSConcaveHull::CostmapToPolygonsDBSConcaveHull() : CostmapToPo
 
 CostmapToPolygonsDBSConcaveHull::~CostmapToPolygonsDBSConcaveHull() 
 {
+  stopWorker();
   if (dynamic_recfg_ != NULL)
     delete dynamic_recfg_;
 }
