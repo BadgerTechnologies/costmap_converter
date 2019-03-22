@@ -214,7 +214,7 @@ void CostmapToPolygonsDBSMCCH::updateCostmap2D()
         for(std::size_t j = 0; j < costmap_->getSizeInCellsY(); j++)
         {
           int value = costmap_->getCost(i,j);
-          if(value >= costmap_2d::LETHAL_OBSTACLE)
+          if(value == costmap_2d::LETHAL_OBSTACLE)
           {
             double x, y;
             costmap_->mapToWorld((unsigned int)i, (unsigned int)j, x, y);
